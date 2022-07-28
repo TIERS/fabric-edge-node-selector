@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: distributed-resource-collector
+    env_file:
+      - .env
+    image: distributed-resource-collector
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - $EXPOSED_PORT:$INTERNAL_PORT
