@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "c645b285-30db-476c-806c-2f9410977739",
+		"name": "Distributed-Resources",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resources",
+			"item": [
+				{
+					"name": "Get All Resources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/resources"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resorce",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/resources/::1-2022-02-07T19:42:52",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resources",
+								"::1-2022-02-07T19:42:52"
+							],
+							"variable": [
+								{
+									"key": ":1-2022-02-07T19:42:52",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Resource Stats (Endpoint)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timestamp\": {\n        \"timeLocal\": \"2022-02-07T17:42:52.960236621Z\",\n        \"timeSeconds\": 1644255775,\n        \"timeNano\": 1644255772960236621\n    },\n    \"host\": {\n        \"hostname\": \"6551e0d54b40\",\n        \"uptime\": 36972,\n        \"boottime\": 1644218801,\n        \"platform\": \"alpine\",\n        \"virtualizationSystem\": \"docker\",\n        \"virtualizationRole\": \"guest\",\n        \"hostid\": \"a72ab14c-76bf-ea11-8105-842afd4cdfcb\"\n    },\n    \"cpuStats\": {\n        \"modelName\": \"Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz\",\n        \"vendorId\": \"GenuineIntel\",\n        \"averageUsage\": 6.100858206021731,\n        \"coreUsage\": [\n            5.263157894787229,\n            5.263157894547889,\n            9.523809523510483,\n            4.999999999772626,\n            13.636363636382429,\n            4.999999999954525,\n            0,\n            9.523809523623912,\n            5,\n            0,\n            9.999999999772626,\n            4.9999999999090505\n        ]\n    },\n    \"memStats\": {\n        \"total\": 67268472832,\n        \"available\": 58491953152,\n        \"used\": 7808454656\n    },\n    \"diskStats\": [\n        {\n            \"device\": \"/dev/sda5\",\n            \"path\": \"/app\",\n            \"label\": \"\",\n            \"fstype\": \"ext4\",\n            \"total\": 78693273600,\n            \"used\": 65137856512,\n            \"usedPercent\": 87.25557441736834\n        }\n    ],\n    \"procStats\": {\n        \"totalProcs\": 2697,\n        \"createdProcs\": 828472,\n        \"runningProcs\": 2,\n        \"blockedProcs\": 0\n    },\n    \"dockerStats\": [\n        {\n            \"containerID\": \"6551e0d54b40b0820d646d6839bb287b1afe021fd079513abebbc9de205f95e9\",\n            \"name\": \"/distributed-resource-collector\",\n            \"image\": \"distributed-resource-collector\",\n            \"status\": \"Up 3 seconds\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"5197eb8aefc73bb5ad2e65c00e42063bd404921708bc723c22fb68b1a2d30d17\",\n            \"name\": \"/dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\n            \"image\": \"dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-9e2ae745b02b13626fa3a2f2d71e307d9bfe37fc81485ce810802cb0859f0872\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"6b3ef28653eba608ddfc31104ad0f49138eae9070e63fc7331e77813cb8428f1\",\n            \"name\": \"/dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\n            \"image\": \"dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-1b5f8eb9971213e57fd41c10cac95d657f48b197f27f836e8cc606f0a4cf27fc\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"3bb69c5f199d4b065651affc85afd9b054b48054c10d2e184a72995506769078\",\n            \"name\": \"/cli\",\n            \"image\": \"hyperledger/fabric-tools:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"e5a176162eb25c1b329b24d8372ca81d63e37e87aa7a61c0425edcede190e64b\",\n            \"name\": \"/peer0.org1.example.com\",\n            \"image\": \"hyperledger/fabric-peer:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"b2828ca9a92a7e02a10e7ff2fdfa372d5c44856de7ed56769d2b7ffe8214ded7\",\n            \"name\": \"/peer0.org2.example.com\",\n            \"image\": \"hyperledger/fabric-peer:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"e295b0fa27d2f39956954fba8cee354adb7d3234c5c82e986915d84027b4f6d5\",\n            \"name\": \"/couchdb1\",\n            \"image\": \"couchdb:3.1.1\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"1fd5a81d368abb99a77e3c2ba2a7fca2dfcab7db66f0e38891a6c329254c0e01\",\n            \"name\": \"/couchdb0\",\n            \"image\": \"couchdb:3.1.1\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"b98ce3b21911ec0502ddf257c696483e25cf3937e7f076246391e7fc1c33826a\",\n            \"name\": \"/orderer.example.com\",\n            \"image\": \"hyperledger/fabric-orderer:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"ffc419647d21c0e5f166742bab1148b4f5f801119caf33966c177813a95c7ad4\",\n            \"name\": \"/ca_org2\",\n            \"image\": \"hyperledger/fabric-ca:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"cb8e1482255aea17b91af51ef315ee6471cccf5f4912146f4b16ddade9fa9f7c\",\n            \"name\": \"/ca_org1\",\n            \"image\": \"hyperledger/fabric-ca:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        },\n        {\n            \"containerID\": \"202b84db26c16ce6e347dc892307d717abaafa4d996d897684d32580f15addb9\",\n            \"name\": \"/ca_orderer\",\n            \"image\": \"hyperledger/fabric-ca:latest\",\n            \"status\": \"Up 6 hours\",\n            \"State\": \"running\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/resources"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Resource",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"::1-2022-02-07T19:42:52\",\n        \"timestamp\": {\n            \"timeLocal\": \"2022-02-07T17:42:52.960236621Z\",\n            \"timeSeconds\": 1644255772,\n            \"timeNano\": 1644255772960236500\n        },\n        \"host\": {\n            \"hostname\": \"6551e0d54b40\",\n            \"uptime\": 36972,\n            \"boottime\": 1644218801,\n            \"platform\": \"alpine\",\n            \"virtualizationSystem\": \"docker\",\n            \"virtualizationRole\": \"guest\",\n            \"hostid\": \"a72ab14c-76bf-ea11-8105-842afd4cdfcb\"\n        },\n        \"cpuStats\": {\n            \"modelName\": \"Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz\",\n            \"vendorId\": \"GenuineIntel\",\n            \"averageUsage\": 6.100858206021731,\n            \"coreUsage\": [\n                5.263157894787229,\n                5.263157894547889,\n                9.523809523510483,\n                4.999999999772626,\n                13.636363636382429,\n                4.999999999954525,\n                0,\n                9.523809523623912,\n                5,\n                0,\n                9.999999999772626,\n                4.9999999999090505\n            ]\n        },\n        \"memStats\": {\n            \"total\": 67268472832,\n            \"available\": 58491953152,\n            \"used\": 7808454656\n        },\n        \"diskStats\": [\n            {\n                \"device\": \"/dev/sda5\",\n                \"path\": \"/app\",\n                \"label\": \"\",\n                \"fstype\": \"ext4\",\n                \"total\": 78693273600,\n                \"used\": 65137856512,\n                \"usedPercent\": 87.25557441736834\n            }\n        ],\n        \"procStats\": {\n            \"totalProcs\": 2697,\n            \"createdProcs\": 828472,\n            \"runningProcs\": 2,\n            \"blockedProcs\": 0\n        },\n        \"dockerStats\": [\n            {\n                \"containerID\": \"6551e0d54b40b0820d646d6839bb287b1afe021fd079513abebbc9de205f95e9\",\n                \"name\": \"/distributed-resource-collector\",\n                \"image\": \"distributed-resource-collector\",\n                \"status\": \"Up 3 seconds\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"5197eb8aefc73bb5ad2e65c00e42063bd404921708bc723c22fb68b1a2d30d17\",\n                \"name\": \"/dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\n                \"image\": \"dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-9e2ae745b02b13626fa3a2f2d71e307d9bfe37fc81485ce810802cb0859f0872\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"6b3ef28653eba608ddfc31104ad0f49138eae9070e63fc7331e77813cb8428f1\",\n                \"name\": \"/dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\n                \"image\": \"dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-1b5f8eb9971213e57fd41c10cac95d657f48b197f27f836e8cc606f0a4cf27fc\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"3bb69c5f199d4b065651affc85afd9b054b48054c10d2e184a72995506769078\",\n                \"name\": \"/cli\",\n                \"image\": \"hyperledger/fabric-tools:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"e5a176162eb25c1b329b24d8372ca81d63e37e87aa7a61c0425edcede190e64b\",\n                \"name\": \"/peer0.org1.example.com\",\n                \"image\": \"hyperledger/fabric-peer:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"b2828ca9a92a7e02a10e7ff2fdfa372d5c44856de7ed56769d2b7ffe8214ded7\",\n                \"name\": \"/peer0.org2.example.com\",\n                \"image\": \"hyperledger/fabric-peer:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"e295b0fa27d2f39956954fba8cee354adb7d3234c5c82e986915d84027b4f6d5\",\n                \"name\": \"/couchdb1\",\n                \"image\": \"couchdb:3.1.1\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"1fd5a81d368abb99a77e3c2ba2a7fca2dfcab7db66f0e38891a6c329254c0e01\",\n                \"name\": \"/couchdb0\",\n                \"image\": \"couchdb:3.1.1\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"b98ce3b21911ec0502ddf257c696483e25cf3937e7f076246391e7fc1c33826a\",\n                \"name\": \"/orderer.example.com\",\n                \"image\": \"hyperledger/fabric-orderer:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"ffc419647d21c0e5f166742bab1148b4f5f801119caf33966c177813a95c7ad4\",\n                \"name\": \"/ca_org2\",\n                \"image\": \"hyperledger/fabric-ca:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"cb8e1482255aea17b91af51ef315ee6471cccf5f4912146f4b16ddade9fa9f7c\",\n                \"name\": \"/ca_org1\",\n                \"image\": \"hyperledger/fabric-ca:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            },\n            {\n                \"containerID\": \"202b84db26c16ce6e347dc892307d717abaafa4d996d897684d32580f15addb9\",\n                \"name\": \"/ca_orderer\",\n                \"image\": \"hyperledger/fabric-ca:latest\",\n                \"status\": \"Up 6 hours\",\n                \"State\": \"running\"\n            }\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/resources"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resources from Device last Minutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/resources/device/:device/minutes/:minutes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resources",
+								"device",
+								":device",
+								"minutes",
+								":minutes"
+							],
+							"variable": [
+								{
+									"key": "device",
+									"value": "172.26.55.159"
+								},
+								{
+									"key": "minutes",
+									"value": "5000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resources from Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/resources/device/:device",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resources",
+								"device",
+								":device"
+							],
+							"variable": [
+								{
+									"key": "device",
+									"value": "172.26.55.159"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Resource Analysis from Device last Minutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/resources/device/:device/minutes/:minutes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"resources",
+								"device",
+								":device",
+								"minutes",
+								":minutes"
+							],
+							"variable": [
+								{
+									"key": "device",
+									"value": "172.26.55.159"
+								},
+								{
+									"key": "minutes",
+									"value": "5000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Get All Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inventory Asset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inventory Servers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/inventory/servers"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Inventory Asset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"172.19.0.2\",\n\t\"name\": \"Server\",\n\t\"owner\": \"UTU\",\n\t\"type\": 0,\n\t\"state\": 1,\n\t\"properties\": {\n\t\t\"GPU\": 0,\n        \"hostname\": \"172.26.4.82\",\n        \"hostPort\": \"22\",\n        \"hostUser\": \"dmonteroh\",\n        \"hostPassword\": \"7154\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Inventory Asset",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"::4\",\n\t\"name\": \"JETSON-01\",\n\t\"owner\": \"UTU\",\n\t\"type\": 0,\n\t\"state\": 1,\n\t\"properties\": {\n\t\t\"GPU\": \"TRUE\",\n        \"hostname\": \"172.26.161.241\",\n        \"hostPort\": \"22\",\n        \"hostUser\": \"tiers\",\n        \"hostPassword\": \"2022\"\n\t}\n}\n//",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/inventory"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Latency",
+			"item": [
+				{
+					"name": "Get Latency Targets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/latency/servers/targets"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Latency Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/latency"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latency from Target last Minutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latency Analysis from Target last Minutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Latency from Source last Minutes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collector",
+			"item": [
+				{
+					"name": "Measure Latency OnDemand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": \"::1\",\n    \"targets\": [\n        {\n            \"hostname\": \"172.26.45.114\",\n            \"hostPort\": \"22\",\n            \"hostUser\": \"bot\",\n            \"hostPassword\": \"future\"\n        },\n        {\n            \"hostname\": \"172.26.161.241\",\n            \"hostPort\": \"22\",\n            \"hostUser\": \"tiers\",\n            \"hostPassword\": \"2022\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8081/latency"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Resource Stats (Collector)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"timestamp\":{\"timeLocal\":\"2022-02-07T17:43:52.960236621Z\",\"timeSeconds\":1644255774,\"timeNano\":1644255772960236621},\"host\":{\"hostname\":\"6551e0d54b40\",\"uptime\":36972,\"boottime\":1644218801,\"platform\":\"alpine\",\"virtualizationSystem\":\"docker\",\"virtualizationRole\":\"guest\",\"hostid\":\"a72ab14c-76bf-ea11-8105-842afd4cdfcb\"},\"cpuStats\":{\"modelName\":\"Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz\",\"vendorId\":\"GenuineIntel\",\"averageUsage\":6.100858206021731,\"coreUsage\":[5.263157894787229,5.263157894547889,9.523809523510483,4.999999999772626,13.636363636382429,4.999999999954525,0,9.523809523623912,5,0,9.999999999772626,4.9999999999090505]},\"memStats\":{\"total\":67268472832,\"available\":58491953152,\"used\":7808454656},\"diskStats\":[{\"device\":\"/dev/sda5\",\"path\":\"/app\",\"label\":\"\",\"fstype\":\"ext4\",\"total\":78693273600,\"used\":65137856512,\"usedPercent\":87.25557441736834}],\"procStats\":{\"totalProcs\":2697,\"createdProcs\":828472,\"runningProcs\":2,\"blockedProcs\":0},\"dockerStats\":[{\"containerID\":\"6551e0d54b40b0820d646d6839bb287b1afe021fd079513abebbc9de205f95e9\",\"name\":\"/distributed-resource-collector\",\"image\":\"distributed-resource-collector\",\"status\":\"Up 3 seconds\",\"State\":\"running\"},{\"containerID\":\"5197eb8aefc73bb5ad2e65c00e42063bd404921708bc723c22fb68b1a2d30d17\",\"name\":\"/dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\"image\":\"dev-peer0.org2.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-9e2ae745b02b13626fa3a2f2d71e307d9bfe37fc81485ce810802cb0859f0872\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"6b3ef28653eba608ddfc31104ad0f49138eae9070e63fc7331e77813cb8428f1\",\"name\":\"/dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981\",\"image\":\"dev-peer0.org1.example.com-basic_1.0-5f042bbcb3e3b1b4b6e6a25f30f746f263614a8b838865b6f72deb9cbd8ab981-1b5f8eb9971213e57fd41c10cac95d657f48b197f27f836e8cc606f0a4cf27fc\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"3bb69c5f199d4b065651affc85afd9b054b48054c10d2e184a72995506769078\",\"name\":\"/cli\",\"image\":\"hyperledger/fabric-tools:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"e5a176162eb25c1b329b24d8372ca81d63e37e87aa7a61c0425edcede190e64b\",\"name\":\"/peer0.org1.example.com\",\"image\":\"hyperledger/fabric-peer:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"b2828ca9a92a7e02a10e7ff2fdfa372d5c44856de7ed56769d2b7ffe8214ded7\",\"name\":\"/peer0.org2.example.com\",\"image\":\"hyperledger/fabric-peer:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"e295b0fa27d2f39956954fba8cee354adb7d3234c5c82e986915d84027b4f6d5\",\"name\":\"/couchdb1\",\"image\":\"couchdb:3.1.1\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"1fd5a81d368abb99a77e3c2ba2a7fca2dfcab7db66f0e38891a6c329254c0e01\",\"name\":\"/couchdb0\",\"image\":\"couchdb:3.1.1\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"b98ce3b21911ec0502ddf257c696483e25cf3937e7f076246391e7fc1c33826a\",\"name\":\"/orderer.example.com\",\"image\":\"hyperledger/fabric-orderer:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"ffc419647d21c0e5f166742bab1148b4f5f801119caf33966c177813a95c7ad4\",\"name\":\"/ca_org2\",\"image\":\"hyperledger/fabric-ca:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"cb8e1482255aea17b91af51ef315ee6471cccf5f4912146f4b16ddade9fa9f7c\",\"name\":\"/ca_org1\",\"image\":\"hyperledger/fabric-ca:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"},{\"containerID\":\"202b84db26c16ce6e347dc892307d717abaafa4d996d897684d32580f15addb9\",\"name\":\"/ca_orderer\",\"image\":\"hyperledger/fabric-ca:latest\",\"status\":\"Up 6 hours\",\"State\":\"running\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/collector"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Selector",
+			"item": [
+				{
+					"name": "Get Offload",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/selector/target/:target/minutes/:minutes/gpu/:gpu",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"selector",
+								"target",
+								":target",
+								"minutes",
+								":minutes",
+								"gpu",
+								":gpu"
+							],
+							"variable": [
+								{
+									"key": "target",
+									"value": "172.26.55.159"
+								},
+								{
+									"key": "minutes",
+									"value": "10"
+								},
+								{
+									"key": "gpu",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Selections from Target",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Selections from Asset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/selector/asset/:asset",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"selector",
+								"asset",
+								":asset"
+							],
+							"variable": [
+								{
+									"key": "asset",
+									"value": "172.19.0.2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Selection by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/selector/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"selector",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "172.26.55.159-2022-07-26T22:35:05"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Selections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/selector"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
