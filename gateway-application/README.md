@@ -1,2 +1,2 @@
 # Distributed Edge Resrouces - Fabric Application
-RESTful GOLANG Fabric application that interfaces with the [Distributed Edge Resrouces - SmartContracts](https://github.com/dmonteroh/fabric-distributed-resources). Included is a JSON file with the REST operations for use with POSTMAN or other REST Clients.
+RESTful GOLANG Fabric application that interfaces with the Smart Contracts. Included in the main project is a JSON file with the REST operations for use with POSTMAN or other REST Clients.
